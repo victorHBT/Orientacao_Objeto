@@ -1,0 +1,42 @@
+import javax.swing.JOptionPane;
+
+public class tarefa_IR {
+	public static void main (String[] args){
+		String STRaluguel, STRreembolso, STRsalario,STRcontriPrev,
+		STRplanodesaude, STRdependentes, STRpensao,STRNdependentes;
+		double rendimento, aluguel, reembolso, salario, base;
+		double deducao, contriPrev, planodesaude, dependente,Ndependente, pensao;
+		
+		
+		STRaluguel = JOptionPane.showInputDialog("Informe seu aluguel");
+		STRsalario = JOptionPane.showInputDialog("Informe seu salario");
+		STRreembolso = JOptionPane.showInputDialog("Informe seu Reembolso de despesas");
+	
+		STRcontriPrev = JOptionPane.showInputDialog("Informe sua Contribuição previdenciária");
+		STRpensao = JOptionPane.showInputDialog("Informe sua Pensão alimentícia");
+		STRplanodesaude = JOptionPane.showInputDialog("Informe seu Plano de saúde");
+		STRNdependentes = JOptionPane.showInputDialog("Informe o numero de seus Dependentes");
+		
+		
+		aluguel = Double.parseDouble(STRaluguel);
+		reembolso = Double.parseDouble(STRreembolso);
+		salario = Double.parseDouble(STRsalario);
+		
+		contriPrev = Double.parseDouble(STRcontriPrev);
+		planodesaude = Double.parseDouble(STRplanodesaude);
+		Ndependente = Double.parseDouble(STRNdependentes);
+		pensao = Double.parseDouble(STRpensao);
+		
+		dependente =(Ndependente * 189.59);
+		
+		rendimento = (aluguel + reembolso + salario);
+		deducao = (contriPrev + planodesaude + dependente + pensao);
+		base = (rendimento - deducao);
+		
+		String resposta =  + base + "\n";
+		
+		JOptionPane.showMessageDialog(null, resposta);
+		
+	}
+}
+
